@@ -1,0 +1,133 @@
+.row1 {
+    display: flex;
+    flex-grow: 1;
+    height: 100%;
+}
+
+.row2 {
+    display: flex;
+    flex-grow: 1;
+    height: 100%;
+}
+
+/*hover effect*/
+/* .item__top {
+    padding-bottom: 30px;
+} */
+
+div.row__item {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+}
+
+div.row__item * {
+    box-sizing: border-box;
+}
+
+// div.r_item img {
+//     max-width: 100%;
+// }
+
+.hovered {
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    width:100%;
+    height:100%;
+    font-size: 34px;
+  /*   text-align: center; */
+    
+}
+.hovered a {
+    color: #000000;
+    display: inline-block;
+    color: black;
+   
+}
+/* div.item a {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+  } */
+
+  div.row__item.row__item__opacity {
+    background-color:rgb(204, 200, 182);
+    width: inherit;
+}
+
+div.row__item.row__item__opacity2 {
+    background-color: #a3a188;
+    width: inherit;
+}
+
+div.row__item:hover img {
+    opacity: 0.3;
+    /*  filter: grayscale(100%); */
+}
+
+div.row__item * {
+    transition: all 0.35s ease-in-out;
+}
+
+div.row__item a {
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 300ms 0ms cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+
+div.row__item :hover a {
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 300ms 100ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.search:before {
+    color: #1a1a1a;
+    content: "\f002";
+    font-size: 30px;
+    font-family: "icomoon";
+}
+
+.chain:before {
+    color: #1a1a1a;
+    content: "\f0c1";
+    font-size: 30px;
+    font-family: "icomoon";
+}
+.inform:before {
+    color: #1a1a1a;
+    content: "\f05a";
+    font-size: 30px;
+    font-family: "icomoon";
+}
+.heart:before {
+    color: #1a1a1a;
+    content: "\f004";
+    font-size: 30px;
+    font-family: "icomoon";
+}
+
+.chain{
+    position: absolute;
+    left: 20%;
+    top:80%;
+
+}
+.inform{
+    position: absolute;
+    left: 50%;
+    top:80%;
+}
+.search{
+    position: absolute;
+    top:50%;
+}
+.heart{
+    position: absolute;
+    left: 80%;
+    top:80%;
+}

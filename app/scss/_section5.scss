@@ -1,0 +1,165 @@
+.team__inner {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    background-color: #ccc8b6;
+}
+
+.team__button {
+    position: absolute;
+    padding: 26px 85px;
+    position: absolute;
+    border: 10px solid #1a1a1a;
+    transition: background 0.2s linear;
+    z-index: 2;
+}
+
+.team__btn {
+    width: 33.333333%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+    
+}
+.team__button:hover{
+    background-color:#ccc8b6e5;
+    opacity: 0.7;
+}
+.team__button:focus{
+    background-color:rgb(204, 200, 182);
+    
+}
+
+
+
+.arrow{
+    position: absolute;
+    z-index: 6;
+    top:120px;
+    right: 0;
+}
+
+
+.team__man {
+    width: 33.333333%;
+    position: relative;
+}
+
+.team__quote {
+    width: 33.333333%;
+}
+
+.team__corey{
+    font-size: 24px;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-align: center;
+    font-family: serif;
+    padding-top:120px ;
+    padding-bottom:50px ;
+}
+
+.team__corey__descr {
+    font-size: 14px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.media {
+    text-align: center;
+}
+
+.media li {
+    display: inline-block;
+    padding: 90px 15px;
+}
+
+.media a {
+    color: #1a1a1a;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 36px;
+}
+
+.media:hover::before {
+    color: #3ac9e8;
+}
+
+.facebook:before {
+    color: #1a1a1a;
+    font-size: 20px;
+    content: "\f09a";
+    font-size: 36px;
+    font-family: "icomoon";
+}
+
+.twitt:before {
+    color: #1a1a1a;
+    font-size: 20px;
+    content: "\f099";
+    font-size: 36px;
+    font-family: "icomoon";
+}
+
+.tumblr:before {
+    color: #1a1a1a;
+    font-size: 20px;
+    content: "\f173";
+    font-size: 36px;
+    font-family: "icomoon";
+}
+
+.linkedin:before {
+    color: #1a1a1a;
+    font-size: 20px;
+    content: "\f0e1";
+    font-size: 36px;
+    font-family: "icomoon";
+}
+
+.instagram:before {
+    color: #1a1a1a;
+    font-size: 20px;
+    content: "\f16d";
+    font-size: 36px;
+    font-family: "icomoon";
+}
+
+.google:before {
+    color: #1a1a1a;
+    font-size: 20px;
+    content: "\e900";
+    font-size: 36px;
+    font-family: "icomoon";
+}
+
+.facebook:hover:before {
+    color: #3ac9e8;
+    transition: 0.3s;
+}
+
+.twitt:hover:before {
+    color: #3ac9e8;
+    transition: 0.3s;
+}
+
+.tumblr:hover:before {
+    color: #3ac9e8;
+    transition: 0.3s;
+}
+
+.linkedin:hover:before {
+    color: #3ac9e8;
+    transition: 0.3s;
+}
+
+.instagram:hover:before {
+    color: #3ac9e8;
+    transition: 0.3s;
+}
+
+.google:hover:before {
+    color: #3ac9e8;
+    transition: 0.3s;
+}
