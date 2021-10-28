@@ -1,47 +1,44 @@
- // When the window has finished loading create our google map below
- google.maps.event.addDomListener(window, 'load', init);
-
- function init() {
-     // Basic options for a simple Google Map
-     // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
-     var mapOptions = {
-         // How zoomed in you want the map to start at (always required)
-         zoom: 8,
-         mapTypeControl: false,
-         draggable: false,
-         scaleControl: false,
-         scrollwheel: false,
-         navigationControl: false,
-         streetViewControl: false,
-         mapTypeId: google.maps.MapTypeId.ROADMAP,
-
-         // The latitude and longitude to center the map (always required)
-         center: new google.maps.LatLng(33.7690164, -118.1916048), // New York
-
-         // How you would like to style the map. 
-         // This is where you would paste any style found on Snazzy Maps.
-         styles: [{ "featureType": "administrative", "elementType": "all", "stylers": [{ "saturation": "-100" }] }, { "featureType": "administrative.province", "elementType": "all", "stylers": [{ "visibility": "off" }] }, { "featureType": "landscape", "elementType": "all", "stylers": [{ "saturation": -100 }, { "lightness": 65 }, { "visibility": "on" }] }, { "featureType": "poi", "elementType": "all", "stylers": [{ "saturation": -100 }, { "lightness": "50" }, { "visibility": "simplified" }] }, { "featureType": "road", "elementType": "all", "stylers": [{ "saturation": "-100" }] }, { "featureType": "road.highway", "elementType": "all", "stylers": [{ "visibility": "simplified" }] }, { "featureType": "road.arterial", "elementType": "all", "stylers": [{ "lightness": "30" }] }, { "featureType": "road.local", "elementType": "all", "stylers": [{ "lightness": "40" }] }, { "featureType": "transit", "elementType": "all", "stylers": [{ "saturation": -100 }, { "visibility": "simplified" }] }, { "featureType": "water", "elementType": "geometry", "stylers": [{ "hue": "#ffff00" }, { "lightness": -25 }, { "saturation": -97 }] }, { "featureType": "water", "elementType": "labels", "stylers": [{ "lightness": -25 }, { "saturation": -100 }] }]
-     };
-
-     // Get the HTML DOM element that will contain your map 
-     // We are using a div with id="map" seen below in the <body>
-     var mapElement = document.getElementById('map');
-
-     // Create the Google Map using our element and options defined above
-     var map = new google.maps.Map(mapElement, mapOptions);
-
-     // Let's also add a marker while we're at it
-
-
-
-     var marker = new google.maps.Marker({
-         position: new google.maps.LatLng(33.7690164, -118.1916048),
-         map: map,
-         // add mark with 
-         icon: {
-             url: "img/mark.png",
-             scaledSize: new google.maps.Size(54, 64)
-         }
-
-     });
- }
+mapboxgl.accessToken = 'pk.eyJ1IjoiYTFleC1kIiwiYSI6ImNrdmFwMXpiZDBoOXIycHBnMGNxcGl5a2gifQ.VM4ZiVKWztyEI7gWb10sZQ';
+     
+    const geojson = {
+    'type': 'FeatureCollection',
+    'features': [
+    {
+    'type': 'Feature',
+    'geometry': {
+    'type': 'Point',
+    'coordinates': [-118.1916048, 33.7690164]
+    },
+    'properties': {
+    'title': 'Tattoo Salone',
+    'description': 'Washington, D.C.'
+    }
+    }
+    
+    ]
+    };
+     
+    const map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/light-v10',
+    center: [-118.1916048, 33.7690164],
+    zoom: 9
+    });
+     
+    // add markers to map
+    for (const feature of geojson.features) {
+    // create a HTML element for each feature
+    const el = document.createElement('div');
+    el.className = 'marker';
+     
+    // make a marker for each feature and add it to the map
+    new mapboxgl.Marker(el)
+    .setLngLat(feature.geometry.coordinates)
+    .setPopup(
+    new mapboxgl.Popup({ offset: 25 }) // add popups
+    .setHTML(
+    `<h3>${feature.properties.title}</h3><p>${feature.properties.description}</p>`
+    )
+    )
+    .addTo(map);
+    }
